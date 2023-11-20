@@ -22,7 +22,7 @@
             print "<td>".$row->emailUser."</td>";
             print "<td>".$row->dataNasUser."</td>";
             print "<td>
-                        <button onclick=\"location.href='?page=editar&id=".$row->idUser."';\" class='btn btn-success'>Editar</button>
+                        <button onclick=\"location.href='?page=alterar&id=".$row->idUser."';\" class='btn btn-success'>Editar</button>
                         <button onclick=\"if(confirm('Tem certeza que deseeja excluir?')){location.href='?page=excluir&id=".$row->idUser."';}else{false;}\"class='btn btn-danger'>Excluir</button>
                     </td>";
             print"</tr>";

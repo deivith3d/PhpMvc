@@ -9,7 +9,7 @@
     //echo "o id é: ".$row->idUser;
 
 ?>
-<form action="?page=alterar" method="POST">
+<form action="?page=editar" method="POST">
     <input type="hidden" name="acao" value="editar">
     <input type="hidden" name="idUser" value="<?php print $row['idUser']; ?>">
     <div class="mb-3">

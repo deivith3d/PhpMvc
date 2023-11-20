@@ -33,7 +33,6 @@
     <div class="row">
       <div class="col mt-5">
       <?php
-        include("view/config.php");
         switch(@$_REQUEST["page"]){
           case "novo":
               include("view/novousuario.php"); break;
@@ -42,9 +41,9 @@
           case "salvar":
                 include("controller/PessoaController.php"); 
                 PessoaController::cadastrar();break;
-          case "editar":
-            include("view/editarusuario.php"); break;
           case "alterar":
+            include("view/editarusuario.php"); break;
+          case "editar":
               include("controller/PessoaController.php"); 
               PessoaController::editar();break;
           case "excluir":
