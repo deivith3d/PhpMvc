@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastro</title>
+    <link href="view/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Cadastro</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="?page=novo">Novo Usuário</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="?page=listar">Listar Usuários</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col mt-5">
+      <?php
+        include("view/config.php");
+        switch(@$_REQUEST["page"]){
+          case "novo":
+              include("view/novousuario.php"); break;
+          case "listar":
+              include("view/listarusuarios.php"); break;
+          case "salvar":
+                include("controller/PessoaController.php"); 
+                PessoaController::cadastrar();break;
+          case "editar":
+            include("view/editarusuario.php"); break;
+          case "alterar":
+              include("controller/PessoaController.php"); 
+              PessoaController::editar();break;
+          case "excluir":
+                include("controller/PessoaController.php"); 
+                PessoaController::excluir();break;
+          default:    
+            echo "<h1>Bem-vindos!</h1>";
+        }
+        ?>
+      </div>
+    </div>
+  </div>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
